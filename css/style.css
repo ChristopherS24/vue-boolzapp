@@ -18,3 +18,49 @@ html {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+body {
+    height: 100vh;
+    background: rgb(241,9,9);
+    background: linear-gradient(180deg, rgba(241,9,9,1) 18%, rgba(38,37,37,1) 36%);
+}
+
+main {
+    display: flex;
+   
+}
+
+.contacts {
+    width: 30%;
+    background-color: rgb(241,9,9);
+    border-right: 1px solid black;
+}
+
+.user {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    padding: 10px 20px;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.contacts-list {
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+}
+
+.users {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
