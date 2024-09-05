@@ -4,6 +4,7 @@ const app = createApp({
     data() {
         return {
             activeContactIndex: 0,
+            userMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +175,14 @@ const app = createApp({
             console.log('Click sul Contatto', index);
 
             this.activeContactIndex = index;
+        },
+        sendMessage() {
+            this.contacts[this.activeContactIndex].messages.push({
+                message: this.userMessage,
+                status: 'sent'
+            });
+            //console.log(this.userMessage);
+            this.userMessage = '';}
         }
     }
-}).mount('#app');
+).mount('#app');

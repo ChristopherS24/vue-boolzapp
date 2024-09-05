@@ -53,7 +53,7 @@
                     <!--CHAT-->
                     <div class="chat">
                         <div class="chat-header">
-                            <img src="img/avatar_1.jpg" alt="Michele">
+                            <img :src="contacts[activeContactIndex].avatar" :alt="contacts[activeContactIndex].name">
                             <p>
                                 {{ contacts[activeContactIndex].name }}
                             </p>
@@ -76,7 +76,11 @@
                         </div>
 
                         <div class="chat-input">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input 
+                                @keyup.enter="sendMessage()"
+                                v-model="userMessage"
+                                type="text"
+                                placeholder="Scrivi un messaggio">
                             <button>Invia</button>
                         </div>
                     </div>
