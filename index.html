@@ -17,51 +17,55 @@
 
             <!-- main -->
             <main>
+                <div class="container">
                 
-                <div class="contacts">
+                <!--CONTACTS-->
+                    <div class="contacts">
 
-                    <div class="user">
-                        <h2>Sofia</h2>
-                    <!-- <div class="container">
-                        <img :src="img/avatar_1.jpg" alt="Sofia">
-                        <h1>
-                            {{ message }}
-                        </h1>
-                    </div> -->
-                    </div>  
-                    <div class="search">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <div class="user">
+                            <img src="img/avatar_io.jpg" alt="Sofia">
+                            <h2>Sofia</h2>
+
+                        </div>  
+
+                        <div class="search">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+
+                        <div class="contacts-list">
+                            <div class="contact" v-for="contact in contacts" :key="contact.id" @click="selectcontact(contact)">
+                                <img :src="contact.avatar" alt="Contact Image">
+
+                                <div class="contact-info">
+                                    <h3>{{ contact.name }}</h3>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="contacts-list">
-                        <div class="contact">
+                    <!--CHAT-->
+                    <div class="chat">
+                        <div class="chat-header">
+                            <img src="img/avatar_1.jpg" alt="Michele">
+                            <p>Michele</p>
+                         
+                        </div>
 
-                            <div class="contact-info">
-                                <p>Ultimo messaggio inviato</p>
+                        <div class="chat-messages">
+                            <div class="message">
+
                             </div>
 
                         </div>
-                    </div>
-                </div>
 
-                <!--CHAT-->
-                <div class="chat">
-                    <div class="chat-header">
-                        <p>Michele</p>
-
-                    </div>
-
-                    <div class="chat-messages">
-                        <div class="message">
-
+                        <div class="chat-input">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                            <button>Invia</button>
                         </div>
-
                     </div>
 
-                    <div class="chat-input">
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <button>Invia</button>
-                    </div>
                 </div>
             </main>
 

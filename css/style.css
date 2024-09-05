@@ -15,23 +15,30 @@ html {
     GENERAL
 */
 
-
-body {
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     height: 100vh;
     background: rgb(241,9,9);
     background: linear-gradient(180deg, rgba(241,9,9,1) 18%, rgba(38,37,37,1) 36%);
 }
-
-main {
-    display: flex;
-   
-}
+ 
 
 /*
 MAIN
 */
-.main
+.container {
 
+    width: 80%;
+    display: flex;
+
+}
+
+
+/*
+CONTACTS
+*/
 .contacts {
     width: 30%;
     background-color: rgb(241,9,9);
@@ -39,14 +46,24 @@ MAIN
 }
 
 .user {
-    padding: 20px;
+    padding: 5px;
+    height: 15%;
     background-color: white;
     display: flex;
     align-items: center;
 }
 
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .search {
-    padding: 10px 20px;
+    
+    padding: 5px;
+    height: 8%;
 }
 
 .search input {
@@ -57,17 +74,28 @@ MAIN
 
 .contacts-list {
     overflow-y: auto;
-    height: calc(100vh - 150px);
+    height: calc(100% - (8% + 15%));
     background-color: rgb(241,9,9);
 }
 
-.users {
+.contact {
     padding: 15px 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
+.contact img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+/*
+CHAT
+*/
 .chat {
     width: 70%;
     display: flex;
@@ -80,6 +108,13 @@ MAIN
     display: flex;
     align-items: center;
     border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .chat-messages {
