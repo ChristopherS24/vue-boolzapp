@@ -132,6 +132,17 @@ CHAT
     position: relative;
 }
 
+.message.sent {
+    background-color: #dcf8c6;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message.received {
+    background-color: white;
+    align-self: flex-start;
+}
+
 .chat-input {
     display: flex;
     padding: 10px;

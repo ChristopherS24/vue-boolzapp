@@ -33,13 +33,18 @@
                         </div>
 
                         <div class="contacts-list">
-                            <div class="contact" v-for="contact in contacts" :key="contact.id" @click="selectcontact(contact)">
-                                <img :src="contact.avatar" alt="Contact Image">
+                            <div class="contact" v-for="(contact, index) in contacts" 
+                            class='single-contact-container'
+                            :class="{
+                                'active': index == activeContactIndex
+                            }"
+                            @click="handleContactClick(index)">
+                            <img :src="contact.avatar" :alt="contact.name">
 
-                                <div class="contact-info">
-                                    <h3>{{ contact.name }}</h3>
-                                    <p>Ultimo messaggio inviato</p>
-                                </div>
+                            <div class="contact-info">
+                                <h3>{{ contact.name }}</h3>
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
 
                             </div>
                         </div>
@@ -49,12 +54,22 @@
                     <div class="chat">
                         <div class="chat-header">
                             <img src="img/avatar_1.jpg" alt="Michele">
-                            <p>Michele</p>
+                            <p>
+                                {{ contacts[activeContactIndex].name }}
+                            </p>
                          
                         </div>
 
                         <div class="chat-messages">
-                            <div class="message">
+                            <div class="message" v-for="(message, index) in contacts[activeContactIndex].messages"
+                            class="single-message-container"
+                            :class="{
+                                'sent': message.status == 'sent',
+                                'received': message.status == 'received',
+                            }">
+                            <div class="single-message-item">
+                                {{ message.message}}
+                            </div>
 
                             </div>
 
