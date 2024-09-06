@@ -181,8 +181,15 @@ const app = createApp({
                 message: this.userMessage,
                 status: 'sent'
             });
-            //console.log(this.userMessage);
-            this.userMessage = '';}
+            this.userMessage = '';
+        
+            setTimeout(() => {
+                this.contacts[this.activeContactIndex].messages.push({
+                    message: 'Ok',
+                    status: 'received'
+                });
+        },1000);
         }
+        },
     }
 ).mount('#app');

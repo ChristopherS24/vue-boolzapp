@@ -125,22 +125,19 @@ CHAT
 }
 
 .message {
-    max-width: 60%;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 10px;
-    position: relative;
+    display: flex;
 }
 
 .message.sent {
     background-color: #b9f3ac;
-    display: flex;
     justify-content: flex-end;
 }
 
 .message.received {
     background-color: white;
-    align-self: flex-start;
 }
 
 .chat-input {
@@ -156,4 +153,10 @@ CHAT
     border-radius: 20px;
     border: 1px solid white;
     margin-right: 10px;
+}
+
+
+button {
+    width: 5%;
+    margin-right: 4px;
 }

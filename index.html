@@ -67,21 +67,26 @@
                                 'sent': message.status == 'sent',
                                 'received': message.status == 'received',
                             }">
-                            <div class="single-message-item">
-                                {{ message.message}}
-                            </div>
+                                <div class="messagebox">
+                                    <div class="single-message-item">
+                                        {{ message.message}}
+                                    </div>
+                                </div>
 
                             </div>
 
                         </div>
 
                         <div class="chat-input">
+                            <button>
+                                <i class="fa-regular fa-face-smile"></i>
+                            </button>
                             <input 
                                 @keyup.enter="sendMessage()"
                                 v-model="userMessage"
                                 type="text"
                                 placeholder="Scrivi un messaggio">
-                            <button>Invia</button>
+                            <button><i class="fa-solid fa-microphone"></i></button>
                         </div>
                     </div>
 
